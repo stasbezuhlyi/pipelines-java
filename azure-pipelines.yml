@@ -6,17 +6,17 @@
 trigger:
 - main
 
-pool: Ubuntu
-  # vmImage: ubuntu-latest
+pool: 
+  vmImage: ubuntu-latest
 
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    # javaHomeOption: 'JDKVersion'
-    javaHomeOption: 'path'
-    jdkDirectory: '/usr/lib/jvm/java-8-openjdk-amd64'
+    javaHomeOption: 'JDKVersion'
+    # javaHomeOption: 'path'
+    # jdkDirectory: '/usr/lib/jvm/java-8-openjdk-amd64'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
